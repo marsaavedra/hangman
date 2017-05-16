@@ -25,7 +25,8 @@ var hangmanGame = {
         }
     ]};
 //randomize the word bank
-var randomWord = hangmanGame.words[Math.floor(Math.floor()* hangmanGame.words.length)].word;
+var randNum = Math.floor(Math.random()* hangmanGame.words.length);
+var randomWord = hangmanGame.words[randNum].word;
 console.log("randomWord: ", randomWord);
 
 document.getElementById("curWord").innerHTML = randomWord; 
