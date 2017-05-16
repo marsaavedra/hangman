@@ -24,8 +24,6 @@ var hangmanGame = {
             hint: "house of the most ambitious wizards"
         }
     ]};
-
-
 //randomize the word bank
 var randomWord = hangmanGame.words[Math.floor(Math.floor()* hangmanGame.words.length)].word;
 console.log("randomWord: ", randomWord);
