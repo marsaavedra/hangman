@@ -1,7 +1,6 @@
 // javascipt file
 
 //the very first thing I want to create is my word bank and hints
-function wordBank () {
 var hangmanGame = {
     words: [
         {
@@ -24,8 +23,7 @@ var hangmanGame = {
             word: "slytherin",
             hint: "house of the most ambitious wizards"
         }
-    ]
-};
+    ]};
 
 
 //randomize the word bank
@@ -33,8 +31,6 @@ var randomWord = hangmanGame.words[Math.floor(Math.floor()* hangmanGame.words.le
 console.log("randomWord: ", randomWord);
 
 document.getElementById("curWord").innerHTML = randomWord; 
-
-};
 
 console.log ("randomWord");
 
