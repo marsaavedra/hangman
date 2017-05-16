@@ -23,6 +23,7 @@ var hangmanGame = {
             word: "slytherin",
             hint: "house of the most ambitious wizards"
         }
+        
     ]};
 //randomize the word bank
 var randNum = Math.floor(Math.random()* hangmanGame.words.length);
