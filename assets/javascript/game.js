@@ -48,7 +48,7 @@ var s;
 
 var wins = 0;
 var numberOfGuessesLeft = 15;
-var lettersRemaining;
+var lettersRemaining= 0;
 var hasAlreadyBeenGuessed = false;
 
 //putting the correct actions in the correct places in the HTML file
@@ -119,9 +119,10 @@ for( var i= 0; i< lettersGuessedArray.length; i++) {
         }
     }
     console.log(lettersRemaining);
-    if (lettersRemaining === 0) {
+    if (lettersRemaining < 1) {
         getStarted();
         wins++;
+        console.log("wins: ", wins);
         numberOfGuessesLeft = 15;
         lettersGuessedArray = [];
     }
