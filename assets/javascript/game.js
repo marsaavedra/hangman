@@ -88,8 +88,33 @@ document.onkeyup = function (event) {
     }
         numberOfGuessesLeft--;
         document.getElementById("numberOfGuessesLeft").innerHTML = numberOfGuessesLeft; 
-         
+     
 };
+///this is me trying to restart the game when number of guesses left reaches zero
+// function restart(numberOfGuessesLeft) {
+    if (numberOfGuessesLeft == 0) {
+        var wins = 0;
+        var numberOfGuessesLeft = 15;
+
+        var randomNum = Math.floor(Math.random() * hangmanGame.words.length); //this variable was seperated for simplicity
+        var randomWord = hangmanGame.words[randomNum].word;
+        var randomWordHint = hangmanGame.words[randomNum].hint;
+
+        //this section is to get the dashes for the user to guess
+        for (var i = 0; i < randomWord.length; i++) {
+        // console.log("randomWord[i]", randomWord[i]);
+        curWordArray[i] = "_";
+        
+        }
+        s= curWordArray.join(" ");
+        document.getElementById("curWord").innerHTML = s;
+    };
+
+// restart(0);
+// console.log("restart", restart);     
+
+
+
 
 
 
