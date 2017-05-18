@@ -32,8 +32,6 @@ var randomNum = Math.floor(Math.random() * hangmanGame.words.length); //this var
 var randomWord = hangmanGame.words[randomNum].word;
 var randomWordHint = hangmanGame.words[randomNum].hint;
 
-var randNum = Math.floor(Math.random()* hangmanGame.words.length);
-var randomWord = hangmanGame.words[randNum].word;
 
 console.log("randomWord: ", randomWord);
 console.log("randomWordHint: ", randomWordHint);
