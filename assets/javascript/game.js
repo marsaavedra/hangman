@@ -1,10 +1,7 @@
 // javascipt file
 
 //the very first thing I want to create is my word bank and hints
-<<<<<<< HEAD
 
-=======
->>>>>>> 628c1024ffb744f85a2b7e180abd0888c2862e02
 var hangmanGame = {
     words: [
         {
@@ -30,14 +27,14 @@ var hangmanGame = {
         
     ]};
 //randomize the word bank
-<<<<<<< HEAD
+
 var randomNum = Math.floor(Math.random() * hangmanGame.words.length); //this variable was seperated for simplicity
 var randomWord = hangmanGame.words[randomNum].word;
 var randomWordHint = hangmanGame.words[randomNum].hint;
-=======
+
 var randNum = Math.floor(Math.random()* hangmanGame.words.length);
 var randomWord = hangmanGame.words[randNum].word;
->>>>>>> 628c1024ffb744f85a2b7e180abd0888c2862e02
+
 console.log("randomWord: ", randomWord);
 console.log("randomWordHint: ", randomWordHint);
 
@@ -58,7 +55,6 @@ document.getElementById("wins").innerHTML = wins;
 
 document.getElementById("hint").innerHTML = randomWordHint;
 
-<<<<<<< HEAD
 document.getElementById("numberOfGuessesLeft").innerHTML = numberOfGuessesLeft;
 
 document.getElementById("curWord").innerHTML = curWordArray;
@@ -90,23 +86,7 @@ document.onkeyup = function (event) {
         }
         } 
 };
-        //money shot right here..if the random word contains the letter the user typed in..
-        // if (randomWord[i] === letter) {
-        //     //BOOM! Assign it to the dang letter
-        //     curWordArray[i] = letter;
-        //     console.log("right letter:", letter);
-        // }
-        // else {
-        //     console.log("wrongLetter:", letter);
-        //     guessedArray[i] = letter;
-        //     // document.getElementById("lettersGuessed").innerHTML = guessedArray;
-        //     guessedArray.push[letter];
-        // }
-//     }
-// };
 
 
-=======
-console.log ("randomWord");
->>>>>>> 628c1024ffb744f85a2b7e180abd0888c2862e02
+
 
