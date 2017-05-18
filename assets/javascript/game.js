@@ -27,9 +27,9 @@ var hangmanGame = {
         
     ]};
 //randomize the word bank
-var randomNum = Math.floor(Math.random() * hangmanGame.words.length); //this variable was seperated for simplicity
-var randomWord = hangmanGame.words[randomNum].word;
-var randomWordHint = hangmanGame.words[randomNum].hint;
+var randomNum;
+var randomWord;
+var randomWordHint;
 
 
 console.log("randomWord: ", randomWord);
@@ -48,20 +48,27 @@ var s;
 
 var wins = 0;
 var numberOfGuessesLeft = 15;
+var lettersRemaining;
 
 //putting the correct actions in the correct places in the HTML file
-document.getElementById("wins").innerHTML = wins;
+// document.getElementById("wins").innerHTML = wins;
 
-document.getElementById("hint").innerHTML = randomWordHint;
+// document.getElementById("hint").innerHTML = randomWordHint;
 
-document.getElementById("numberOfGuessesLeft").innerHTML = numberOfGuessesLeft;
+// document.getElementById("numberOfGuessesLeft").innerHTML = numberOfGuessesLeft;
 
-document.getElementById("curWord").innerHTML = curWordArray;
+// document.getElementById("curWord").innerHTML = curWordArray;
 
 
 //here is where the game begins
 function getStarted () {
+ randomNum = Math.floor(Math.random() * hangmanGame.words.length); //this variable was seperated for simplicity
+ randomWord = hangmanGame.words[randomNum].word;
+ randomWordHint = hangmanGame.words[randomNum].hint;
 
+lettersRemaining = randomWord.length; 
+
+        curWordArray= []
 //this section is to get the dashes for the user to guess
     for (var i = 0; i < randomWord.length; i++) {
         // console.log("randomWord[i]", randomWord[i]);
@@ -71,8 +78,14 @@ function getStarted () {
     s= curWordArray.join(" ");
     document.getElementById("curWord").innerHTML = s;
 
+document.getElementById("wins").innerHTML = wins;
 
+document.getElementById("hint").innerHTML = randomWordHint;
 
+document.getElementById("numberOfGuessesLeft").innerHTML = numberOfGuessesLeft;
+
+document.getElementById("curWord").innerHTML = curWordArray;
+};
 //the next step to is to include user input
       
 document.onkeyup = function (event) {
@@ -81,6 +94,7 @@ document.onkeyup = function (event) {
     for(var i=0; i < randomWord.length; i++) {
         if(randomWord[i] === letter) {
             curWordArray[i] = letter;
+            lettersRemaining--;
             console.log("letterpressed: ", curWordArray[i]);
                 s= curWordArray.join(" ");
                 document.getElementById("curWord").innerHTML = s;
@@ -94,6 +108,7 @@ document.onkeyup = function (event) {
 
         }
     }
+    console.log(lettersRemaining);
         numberOfGuessesLeft--;
         document.getElementById("numberOfGuessesLeft").innerHTML = numberOfGuessesLeft; 
         
@@ -107,9 +122,8 @@ document.onkeyup = function (event) {
         // if (curWordArray.length == randomWord.length) {
         //     getStarted();
         // }
-}
-          
-};
+};          
+
 getStarted();
 
 
