@@ -49,6 +49,7 @@ var s;
 var wins = 0;
 var numberOfGuessesLeft = 15;
 var lettersRemaining;
+var hasAlreadyBeenGuessed = false;
 
 //putting the correct actions in the correct places in the HTML file
 // document.getElementById("wins").innerHTML = wins;
@@ -90,26 +91,41 @@ document.getElementById("curWord").innerHTML = curWordArray;
       
 document.onkeyup = function (event) {
     var letter = String.fromCharCode(event.keyCode).toLowerCase();
-   
-    for(var i=0; i < randomWord.length; i++) {
-        if(randomWord[i] === letter) {
-            curWordArray[i] = letter;
-            lettersRemaining--;
-            console.log("letterpressed: ", curWordArray[i]);
-                s= curWordArray.join(" ");
-                document.getElementById("curWord").innerHTML = s;
-       
-        }if (randomWord.indexOf(letter) == -1) {
-            lettersGuessedArray.push(letter);
-            console.log("letterpressed: ", lettersGuessedArray[i]);
-            s= lettersGuessedArray.join(" ");
-                document.getElementById("lettersGuessed").innerHTML = s;
-                break;
+   hasAlreadyBeenGuessed=false;
+for( var i= 0; i< lettersGuessedArray.length; i++) {
+    if(lettersGuessedArray[i] == letter) {
+        hasAlreadyBeenGuessed = true;
+    }
+}
+    if(hasAlreadyBeenGuessed === false) {
+        for(var i=0; i < randomWord.length; i++) {
+            if(randomWord[i] === letter) {
+                curWordArray[i] = letter;
+                lettersRemaining--;
+                console.log("letterpressed: ", curWordArray[i]);
+                    s= curWordArray.join(" ");
+                    document.getElementById("curWord").innerHTML = s;
+        
+            }if (randomWord.indexOf(letter) == -1) {
+                lettersGuessedArray.push(letter);
+                console.log("letterpressed: ", lettersGuessedArray[i]);
+                s= lettersGuessedArray.join(" ");
+                    document.getElementById("lettersGuessed").innerHTML = s;
+                    numberOfGuessesLeft--;
+                    break;
 
+
+            }
         }
     }
     console.log(lettersRemaining);
-        numberOfGuessesLeft--;
+    if (lettersRemaining === 0) {
+        getStarted();
+        wins++;
+        numberOfGuessesLeft = 15;
+        lettersGuessedArray = [];
+    }
+        
         document.getElementById("numberOfGuessesLeft").innerHTML = numberOfGuessesLeft; 
         
         if (numberOfGuessesLeft <1) {
