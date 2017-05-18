@@ -44,6 +44,7 @@ var lettersGuessedArray = [];
 //s for string 
 var s; 
 
+
 //the variables that contain numbers
 var wins = 0;
 var numberOfGuessesLeft = 15;
@@ -76,13 +77,18 @@ document.onkeyup = function (event) {
                 s= curWordArray.join(" ");
                 document.getElementById("curWord").innerHTML = s;
        
-        }if (randomWord[i] !== letter) {
-            lettersGuessedArray[i] === letter;
+        }if (randomWord.indexOf(letter) == -1) {
+            lettersGuessedArray.push(letter);
             console.log("letterpressed: ", lettersGuessedArray[i]);
             s= lettersGuessedArray.join(" ");
                 document.getElementById("lettersGuessed").innerHTML = s;
+                break;
+
         }
-        } 
+    }
+        numberOfGuessesLeft--;
+        document.getElementById("numberOfGuessesLeft").innerHTML = numberOfGuessesLeft; 
+         
 };
 
 
