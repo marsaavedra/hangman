@@ -44,6 +44,8 @@ var lettersGuessedArray = [];
 var s; 
 
 
+
+
 //the variables that contain numbers
 
 var wins = 0;
@@ -60,8 +62,8 @@ function getStarted () {
  randomWordHint = hangmanGame.words[randomNum].hint;
 
 lettersRemaining = randomWord.length; 
-wins = 0;
 
+        
         curWordArray= [];
 //this section is to get the dashes for the user to guess
     for (var i = 0; i < randomWord.length; i++) {
@@ -78,7 +80,6 @@ document.getElementById("hint").innerHTML = randomWordHint;
 
 document.getElementById("numberOfGuessesLeft").innerHTML = numberOfGuessesLeft;
 
-document.getElementById("curWord").innerHTML = curWordArray;
 };
 //the next step to is to include user input
       
