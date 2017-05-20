@@ -1,10 +1,21 @@
+body {
+	background: url("../images/theforbiddenforest.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+h1{
+	color: #58E4CA;
+	text-align: center;
+}
 .potter {
 	width: 300px;
-	height: auto;
-}
-#picsection {
-	background-color: black;
+	display: block;
+	margin: auto;
+	
 }
 #hangman {
-	background-color: green;
+	background-color: #7CA2AF;
+	text-align: center;
 }

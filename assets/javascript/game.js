@@ -51,6 +51,7 @@ var s;
 var wins = 0;
 var numberOfGuessesLeft = 15;
 var lettersRemaining= 0;
+
 //boolean 
 var hasAlreadyBeenGuessed = false;
 
@@ -116,6 +117,7 @@ for( var i= 0; i< lettersGuessedArray.length; i++) {
     if (lettersRemaining < 1) {
         getStarted();
         wins++;
+        document.getElementById("wins").innerHTML = wins;
         console.log("wins: ", wins);
         numberOfGuessesLeft = 15;
         lettersGuessedArray = [];
